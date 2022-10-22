@@ -34,7 +34,7 @@ typedef enum readSteps
 
 typedef struct _CLIErrors
 {
-    char *text;
+    char *message;
 
 } CliErrors;
 
@@ -45,7 +45,7 @@ typedef struct _CLI
     char *secondfile;
     char *output;
     signed short int volatile hasError;
-    CliErrors errors;
+    CliErrors *error;
 
 } CLI;
 
