@@ -1,0 +1,20 @@
+4
+BandD
+BandC
+AandD
+AandC
+2
+b
+a
+8
+BandD b BandC
+BandD a AandD
+BandC b BandD
+BandC a AandC
+AandD b AandC
+AandD a AandD
+AandC b AandD
+AandC a AandC
+AandC
+1
+AandC
