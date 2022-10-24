@@ -76,7 +76,7 @@ void complementation(AFD entry, FILE *file)
     // Atribui valor as transições
     for (int i = 0; i < entry.quant_transitions; i++)
     {
-        Transition *transitionProduct = getEmptyTransition;
+        Transition *transitionProduct = getEmptyTransition();
         transitionProduct->from = entry.transitions[i].from;
         transitionProduct->read = entry.transitions[i].read;
         transitionProduct->to = entry.transitions[i].to;
