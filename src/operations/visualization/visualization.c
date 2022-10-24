@@ -6,18 +6,21 @@
 void visualizationEntryPoint(CLI *cli, AFD *afd, int argc, char *argv[])
 {
 
+    // Verifica se há uma quantidade válida de argumentos
     if (argc != 5)
     {
         printf("Quantidade de argumentos inválida, tente novamente!\n");
         return;
     }
 
+    // Verifica se foi passado um arquivo
     if (argv[2] == NULL || argv[4] == NULL)
     {
         printf("Por favor, informe um arquivo!\n");
         return;
     }
 
+    // Verifica se foi informado um arquivo de saída
     if (strcmp("--output", argv[3]) != 0)
     {
         printf("Por favor, informe um arquivo para saída!\n");
@@ -26,8 +29,10 @@ void visualizationEntryPoint(CLI *cli, AFD *afd, int argc, char *argv[])
 
     cli->secondfile = argv[4];
 
+    // Abre o arquivo
     FILE *file = fopen(cli->secondfile, "a");
 
+    // Verifica se o arquivo aberto não é NULL
     if (file == NULL)
     {
         printf("Por favor, informe um arquivo!\n");
