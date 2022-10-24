@@ -8,6 +8,8 @@
 #include "./operations/product/product.h"
 #include "./operations/union/union.h"
 #include "./operations/visualization/visualization.h"
+#include "./operations/minimization/minimization.h"
+#include "./operations/recognition/recognition.h"
 
 void getCorrectOperation(CLI *cli, int argc, char *argv[])
 {
@@ -27,9 +29,11 @@ void getCorrectOperation(CLI *cli, int argc, char *argv[])
         unionEntryPoint(cli, readFile(cli, argv[2]), readFile(cli, argv[3]), argc, argv);
         break;
     case MINIMIZATION:
-        printf("Not implemented");
+        minimizationEntryPoint(cli, readFile(cli, cli->inputfile), argc, argv);
+        break;
     case RECOGNIZE:
-        printf("Not implemented");
+        recognitionEntryPoint(cli, readFile(cli, cli->inputfile), argc, argv);
+        break;
     default:
         printf("Invalid operation, please try again!");
         exit(EXIT_FAILURE);

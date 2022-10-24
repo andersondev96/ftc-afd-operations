@@ -42,8 +42,8 @@ Operations getOperationByText(char *command)
         "--complemento",
         "--intersecao",
         "--uniao",
-        "--minimization",
-        "--recognize"};
+        "--minimizacao",
+        "--reconhecer"};
 
     Operations operations[] = {1, 2, 3, 4, 5, 6};
 
