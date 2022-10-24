@@ -6,6 +6,9 @@
 #include "../utils/cli/utils-cli.h"
 #include "../afd/afd.h"
 
+/*
+    Estrutura enumerando as operações com os AFDs
+*/
 typedef enum operations
 {
     VISUALIZATION = 1,
@@ -17,6 +20,10 @@ typedef enum operations
 
 } Operations;
 
+/*
+    Enumerador para as leituras de estados, símbolos, transições,
+    estados iniciais e estados finais
+*/
 typedef enum readSteps
 {
     READ_QUANT_STATES = 1,
@@ -42,14 +49,30 @@ typedef struct _CLI
 
 CLI *createCLI(int argc, char *argv[]);
 
+/*
+    Método que recebe um comando e retorna a operação.
+*/
 Operations getOperation(char *command);
 
+/*
+    Método que retorna o texto que passa no comando quando faz a operação.
+*/
 Operations getOperationByText(char *command);
 
+/*
+    Método que valida os valores das entrada
+*/
 int *isValidInputs(int argc, char *argv[]);
 
+/*
+    Método que realiza a leitura dos arquivos
+*/
 AFD *readFile(CLI *cli, char *filename);
 
+/*
+    Método que recebe uma AFD e um arquivo de texto e
+     realiza a escrita no arquivo
+*/
 void *writeFile(AFD *afd, FILE *file);
 
 #endif
