@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "./intersection.h";
-#include "../product/product.h";
+#include "./intersection.h"
+#include "../product/product.h"
 
 void intersectionEntryPoint(CLI *cli, AFD *afd1, AFD *afd2, int argc, char *argv[])
 {
@@ -23,7 +23,7 @@ void intersectionEntryPoint(CLI *cli, AFD *afd1, AFD *afd2, int argc, char *argv
         error->message = NOT_PROVIDER_A_FILE;
     }
 
-    if (strcmp("--output", argv[4] != 0))
+    if (strcmp("--output", argv[4]) != 0)
     {
         error = malloc(sizeof(CliErrors));
         error->message = NOT_PROVIDER_A_OUTPUT_FILE_FLAG;
