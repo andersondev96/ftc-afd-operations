@@ -1,4 +1,4 @@
-#include "viuslization.h"
+#include "visualization.h"
 
 void visualizationEntryPoint(CLI *cli, AFD *afd, int argc, const *argv[])
 {
