@@ -197,9 +197,9 @@ AFD *readFile(CLI *cli, char *filename)
             break;
 
         case READ_QUANT_FINAL_STATES:
-            afd->quant_final_states = aoi(line);
+            afd->quant_final_states = atoi(line);
             readSteps = READ_FINAL_STATES;
-            aux = aoi(line);
+            aux = atoi(line);
             afd->final_states = malloc(sizeof(char *) * aux);
             break;
 
