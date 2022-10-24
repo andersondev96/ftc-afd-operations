@@ -61,7 +61,7 @@ Operations getOperationByText(char *command)
         "--dot",
         "--complemento",
         "--intersecao",
-        "--union",
+        "--uniao",
         "--minimization",
         "--recognize"};
 
