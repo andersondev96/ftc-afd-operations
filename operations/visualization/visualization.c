@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "./visualization.h"
 
-void visualizationEntryPoint(CLI *cli, AFD *afd, int argc, const *argv[])
+void visualizationEntryPoint(CLI *cli, AFD *afd, int argc, char *argv[])
 {
     CliErrors *error = NULL;
 
