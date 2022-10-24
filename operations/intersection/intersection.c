@@ -6,33 +6,22 @@
 
 void intersectionEntryPoint(CLI *cli, AFD *afd1, AFD *afd2, int argc, char *argv[])
 {
-    CliErrors *error = NULL;
 
     if (argc != 6)
     {
-        error = malloc(sizeof(CliErrors));
-        error->message = INVALID_ARGUMENTS_QUANTITY;
-        cli->error = error;
-        cli->hasError = 1;
+        printf("Quantidade de argumentos inválida, tente novamente!\n");
         return;
     }
 
     if (argv[2] == NULL || argv[3] == NULL || argv[5] == NULL)
     {
-        error = malloc(sizeof(CliErrors));
-        error->message = NOT_PROVIDER_A_FILE;
+        printf("Por favor, informe um arquivo!\n");
+        return;
     }
 
     if (strcmp("--output", argv[4]) != 0)
     {
-        error = malloc(sizeof(CliErrors));
-        error->message = NOT_PROVIDER_A_OUTPUT_FILE_FLAG;
-    }
-
-    if (error != NULL)
-    {
-        cli->error = error;
-        cli->hasError = 1;
+        printf("Por favor, informe um arquivo para saída!\n");
         return;
     }
 
@@ -42,10 +31,7 @@ void intersectionEntryPoint(CLI *cli, AFD *afd1, AFD *afd2, int argc, char *argv
 
     if (file == NULL)
     {
-        error = malloc(sizeof(CliErrors));
-        error->message = NOT_PROVIDER_A_FILE;
-        cli->error = error;
-        cli->hasError = 1;
+        printf("Por favor, informe um arquivo!\n");
         return;
     }
 

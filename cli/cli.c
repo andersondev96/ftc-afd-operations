@@ -2,49 +2,29 @@
 #include <inttypes.h>
 #include <string.h>
 
-CliErrors *isValidInputs(int argc, char *argv[])
+int *isValidInputs(int argc, char *argv[])
 {
-    CliErrors *error = NULL;
 
     if (argc < 3)
     {
-        error = malloc(sizeof(CliErrors));
-        error->message = INVALID_ARGUMENTS_QUANTITY;
+        printf("Quantidade de argumentos inválida, tente novamente!\n");
     }
 
     if (strcmp(getPrefixOfCliInput(argv[1]), "--") != 0)
     {
-        error = malloc(sizeof(CliErrors));
-        error->message = INVALID_PREFIX_OPERATION;
+        printf("A operação deve iniciar com o prefixo --\n");
     }
 
-    return error;
+    return 0;
 }
 
 CLI *createCLI(int argc, char *argv[])
 {
-    CliErrors *error = isValidInputs(argc, argv);
     CLI *cli = (CLI *)malloc(sizeof(CLI));
-
-    if (error != NULL)
-    {
-        cli->error = error;
-        cli->hasError = 1;
-        return cli;
-    }
 
     Operations operation = getOperation(argv[1]);
 
-    if (operation == -1)
-    {
-        cli->error = malloc(sizeof(CliErrors));
-        cli->error->message = INVALID_OPERATION;
-        cli->hasError = 1;
-        return cli;
-    }
-
     cli->operation = operation;
-    cli->hasError = 0;
     cli->inputfile = argv[2];
 
     return cli;
@@ -100,9 +80,8 @@ AFD *readFile(CLI *cli, char *filename)
 
     if (file == NULL)
     {
-        cli->error = malloc(sizeof(CliErrors));
-        cli->error->message = FILE_NOT_FOUND;
-        cli->hasError = 1;
+
+        printf("Arquivo não encontrado, tente novamente!\n");
 
         return -1;
     }

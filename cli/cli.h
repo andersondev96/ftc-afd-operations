@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "../utils/cli/utils-cli.h"
-#include "../utils/messages/messages.h"
 #include "../afd/afd.h"
 
 typedef enum operations
@@ -32,20 +31,12 @@ typedef enum readSteps
 
 } ReadSteps;
 
-typedef struct _CLIErrors
-{
-    char *message;
-
-} CliErrors;
-
 typedef struct _CLI
 {
     Operations operation;
     char *inputfile;
     char *secondfile;
     char *output;
-    signed short int volatile hasError;
-    CliErrors *error;
 
 } CLI;
 
@@ -55,7 +46,7 @@ Operations getOperation(char *command);
 
 Operations getOperationByText(char *command);
 
-CliErrors *isValidInputs(int argc, char *argv[]);
+int *isValidInputs(int argc, char *argv[]);
 
 AFD *readFile(CLI *cli, char *filename);
 
