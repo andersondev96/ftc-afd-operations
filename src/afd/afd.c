@@ -1,6 +1,7 @@
 
 #include "./afd.h"
 
+// Faz a alocação da Transition
 Transition *getEmptyTransition()
 {
     Transition *transition = malloc(sizeof(Transition));
@@ -10,6 +11,7 @@ Transition *getEmptyTransition()
     return transition;
 }
 
+// Faz a alocação do AFD
 AFD *getEmptyAFD()
 {
     AFD *afd = malloc(sizeof(AFD));
@@ -22,6 +24,7 @@ AFD *getEmptyAFD()
     return afd;
 }
 
+// Libera a transition
 void freeTransition(Transition *transition)
 {
     free(transition->from);
@@ -29,6 +32,7 @@ void freeTransition(Transition *transition)
     free(transition->read);
 }
 
+// Libera a AFD
 void freeAFD(AFD *afd)
 {
     for (int i = 0; i < afd->quant_states; i++)
