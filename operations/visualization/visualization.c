@@ -64,7 +64,7 @@ void visualization(AFD *afd, FILE *file)
         strcpy(final, aux);
     }
 
-    fprintf(file, "tigraph finite_state_machine {\n");
+    fprintf(file, "digraph finite_state_machine {\n");
     fprintf(file, "\trankdir=LR;\n");
     fprintf(file, "\tnode [shape = doublecircle]; %s;\n", final);
     fprintf(file, "\tnode [shape = circle];\n");

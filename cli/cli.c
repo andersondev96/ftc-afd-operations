@@ -116,7 +116,7 @@ AFD *readFile(CLI *cli, char *filename)
 
     int aux = 0;
 
-    while ((read = getline(&line, &len, file)) != 1)
+    while ((read = getline(&line, &len, file)) != -1)
     {
         int end = 0;
 
