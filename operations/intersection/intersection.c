@@ -26,7 +26,7 @@ void intersectionEntryPoint(CLI *cli, AFD *afd1, AFD *afd2, int argc, char *argv
     if (strcmp("--output", argv[4] != 0))
     {
         error = malloc(sizeof(CliErrors));
-        error->message = NOT_PROVIDER_A_FILE;
+        error->message = NOT_PROVIDER_A_OUTPUT_FILE_FLAG;
     }
 
     if (error != NULL)
@@ -49,10 +49,10 @@ void intersectionEntryPoint(CLI *cli, AFD *afd1, AFD *afd2, int argc, char *argv
         return;
     }
 
-    addIntersection(*afd1, *afd2, file);
+    afdIntersection(*afd1, *afd2, file);
 }
 
-void addIntersection(AFD afd1, AFD afd2, FILE *file)
+void afdIntersection(AFD afd1, AFD afd2, FILE *file)
 {
     // Criando AFD de interseção a partir do produto entre duas AFDs
     AFD intersection = afdProduct(afd1, afd2);
