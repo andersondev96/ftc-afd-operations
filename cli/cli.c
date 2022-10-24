@@ -238,7 +238,7 @@ void *writeFile(AFD *afd, FILE *file)
         fprintf(file, "%s\n", strtok(afd->symbols[i], "\n"));
     }
 
-    fprintf(file, "%s\n", afd->quant_transitions);
+    fprintf(file, "%d\n", afd->quant_transitions);
     for (int i = 0; i < afd->quant_transitions; i++)
     {
         fprintf(file, "%s %s %s %s\n", afd->transitions[i].from, afd->transitions[i].read, afd->transitions[i].to);
