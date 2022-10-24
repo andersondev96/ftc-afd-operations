@@ -1,5 +1,5 @@
 
-#include "./afd.h";
+#include "./afd.h"
 
 Transition *getEmptyTransition()
 {

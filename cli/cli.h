@@ -13,6 +13,8 @@ typedef enum operations
     COMPLEMENT = 2,
     INTERSECTION = 3,
     UNION = 4,
+    MINIMIZATION = 5,
+    RECOGNIZE = 6,
 
 } Operations;
 

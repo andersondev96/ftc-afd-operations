@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "./cli/cli.h";
-#include "./afd/afd.h";
+#include "./cli/cli.h"
+#include "./afd/afd.h"
 
 #include "./operations/complement/complement.h"
 #include "./operations/intersection/intersection.h"
@@ -26,13 +26,17 @@ void getCorrectOperation(CLI *cli, int argc, char *argv[])
     case UNION:
         unionEntryPoint(cli, readFile(cli, argv[2]), readFile(cli, argv[3]), argc, argv);
         break;
+    case MINIMIZATION:
+        printf("Not implemented");
+    case RECOGNIZE:
+        printf("Not implemented");
     default:
         printf("Invalid operation, please try again!");
         exit(EXIT_FAILURE);
     }
 }
 
-int main(int argc, char **argv[])
+int main(int argc, char *argv[])
 {
     CLI *cli = createCLI(argc, argv);
     if (cli->error != NULL)

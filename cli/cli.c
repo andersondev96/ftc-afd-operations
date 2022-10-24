@@ -58,11 +58,11 @@ Operations getOperation(char *command)
 Operations getOperationByText(char *command)
 {
     char operationsText[][1000] = {
-        "--uniao",
-        "--intersecao",
-        "--minimizacao",
         "--dot",
         "--complemento",
+        "--intersecao",
+        "--union",
+        "--minimization",
         "--recognize"};
 
     Operations operations[] = {1, 2, 3, 4, 5, 6};
