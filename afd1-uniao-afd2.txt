@@ -16,5 +16,7 @@ AandD a AandD
 AandC b AandD
 AandC a AandC
 AandC
-1
+3
+BandC
+AandD
 AandC

@@ -15,10 +15,10 @@ Transition *getEmptyTransition()
 AFD *getEmptyAFD()
 {
     AFD *afd = malloc(sizeof(AFD));
-    afd->quant_states = (int)malloc(sizeof(int));
-    afd->quant_symbols = (int)malloc(sizeof(int));
-    afd->quant_transitions = (int)malloc(sizeof(int));
-    afd->quant_final_states = (int)malloc(sizeof(int));
+    afd->quant_states = (long)malloc(sizeof(int));
+    afd->quant_symbols = (long)malloc(sizeof(int));
+    afd->quant_transitions = (long)malloc(sizeof(int));
+    afd->quant_final_states = (long)malloc(sizeof(int));
     afd->initial_state = malloc(sizeof(int));
 
     return afd;
