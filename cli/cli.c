@@ -78,7 +78,7 @@ Operations getOperationByText(char *command)
     return -1;
 }
 
-AFD **splitBySpace(char *line)
+char **splitBySpace(char *line)
 {
     char **result = malloc(sizeof(char) * 3);
     char *pch = strtok(line, " ");
@@ -241,7 +241,7 @@ void *writeFile(AFD *afd, FILE *file)
     fprintf(file, "%d\n", afd->quant_transitions);
     for (int i = 0; i < afd->quant_transitions; i++)
     {
-        fprintf(file, "%s %s %s %s\n", afd->transitions[i].from, afd->transitions[i].read, afd->transitions[i].to);
+        fprintf(file, "%s %s %s\n", afd->transitions[i].from, afd->transitions[i].read, afd->transitions[i].to);
     }
 
     fprintf(file, "%s\n", afd->initial_state);
