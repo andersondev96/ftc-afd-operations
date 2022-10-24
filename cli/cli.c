@@ -170,7 +170,7 @@ AFD *readFile(CLI *cli, char *filename)
 
         case READ_TRANSITIONS:
         {
-            Transition *transition = malloc(sizeof(char) * strlen(line));
+            Transition *transition = getEmptyTransition();
 
             char *values = malloc(sizeof(char) * strlen(line));
             strcpy(values, line);

@@ -1,4 +1,7 @@
-#include "visualization.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "./visualization.h"
 
 void visualizationEntryPoint(CLI *cli, AFD *afd, int argc, const *argv[])
 {

@@ -11,10 +11,8 @@ typedef enum operations
 {
     VISUALIZATION = 1,
     COMPLEMENT = 2,
-    RECOGNITION = 3,
-    INTERSSECTION = 1,
-    UNION = 2,
-    MINIMIZATION = 3,
+    INTERSECTION = 3,
+    UNION = 4,
 
 } Operations;
 
@@ -40,7 +38,7 @@ typedef struct _CLIErrors
 
 typedef struct _CLI
 {
-    Operations *operation;
+    Operations operation;
     char *inputfile;
     char *secondfile;
     char *output;

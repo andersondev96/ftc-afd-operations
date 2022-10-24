@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "complement.h"
+#include "./complement.h"
 
 void complementation(AFD entry, FILE *file)
 {
